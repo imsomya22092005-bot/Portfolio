@@ -15,7 +15,7 @@ body {
     line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR  */
 
 .navbar {
     width: 100%;
@@ -76,7 +76,7 @@ body {
     color: #b58cff;
 }
 
-/* ================= COMMON SECTION ================= */
+/*  COMMON SECTION  */
 
 section {
     padding: 100px 8%;
@@ -99,7 +99,7 @@ section {
     font-weight: 600;
 }
 
-/* ================= HERO ================= */
+/*  HERO  */
 
 .hero {
     min-height: 90vh;
@@ -178,7 +178,7 @@ section {
     color: #0b0b0f;
 }
 
-/* ================= TERMINAL ================= */
+/* TERMINAL */
 
 .terminal {
     width: 420px;
@@ -229,7 +229,7 @@ section {
     color: #b58cff;
 }
 
-/* ================= ABOUT ================= */
+/* ABOUT  */
 
 .about {
     background-color: #0b0b0f;
@@ -267,7 +267,7 @@ section {
     font-size: 14px;
 }
 
-/* ================= EDUCATION ================= */
+/*  EDUCATION  */
 
 .education {
     background-color: #101015;
@@ -303,7 +303,7 @@ section {
     margin-bottom: 5px;
 }
 
-/* ================= SKILLS ================= */
+/* SKILLS  */
 
 .skills {
     background-color: #0b0b0f;
@@ -311,7 +311,7 @@ section {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
@@ -342,7 +342,7 @@ section {
     color: #888;
 }
 
-/* ================= PROJECTS ================= */
+/*  PROJECTS */
 
 .projects {
     background-color: #101015;
@@ -395,7 +395,7 @@ section {
     font-size: 12px;
 }
 
-/* ================= CONTACT ================= */
+/*  CONTACT */
 
 .contact {
     background-color: #0b0b0f;
@@ -438,7 +438,7 @@ section {
     text-decoration: underline;
 }
 
-/* ================= MOBILE ================= */
+/*  MOBILE  */
 
 @media (max-width: 768px) {
 
@@ -495,7 +495,7 @@ section {
         align-items: flex-start;
     }
 }
-/* ================= ABOUT EFFECT ================= */
+/*  ABOUT EFFECT  */
 
 .about-content {
     align-items: flex-start;
@@ -538,7 +538,7 @@ section {
 .stat:hover h3 {
     text-shadow: 0 0 15px rgba(181, 140, 255, 0.5);
 }
-/* ================= EDUCATION EFFECT ================= */
+/* EDUCATION EFFECT  */
 
 .education-card {
     position: relative;
@@ -567,4 +567,51 @@ section {
 
 .education-card:hover .education-year {
     text-shadow: 0 0 12px rgba(181, 140, 255, 0.5);
+}
+/* Skills EFFECT  */
+.skill {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill::after {
+    content: "→";
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    color: #b58cff;
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: 0.3s ease;
+}
+
+.skill:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skill:hover h3 {
+    color: #b58cff;
+}
+
+.skill p {
+    transition: 0.3s;
+}
+
+.skill:hover p {
+    color: #aaa;
+}
+/*  FOOTER  */
+.footer {
+    padding: 25px 8%;
+    text-align: center;
+    background-color: #0b0b0f;
+    border-top: 1px solid #27232f;
+}
+
+.footer p {
+    color: #777;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
