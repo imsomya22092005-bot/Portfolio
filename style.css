@@ -102,16 +102,15 @@ section {
 /*  HERO  */
 
 .hero {
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 60px;
+    position: relative;
+    
 }
 
 .hero-content {
-    max-width: 600px;
+    position: relative;
+    z-index: 5;
 }
+
 
 .hero-tag {
     color: #b58cff;
@@ -181,12 +180,8 @@ section {
 /* TERMINAL */
 
 .terminal {
-    width: 420px;
-    background-color: #121218;
-    border: 1px solid #302b3a;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 35px rgba(181, 140, 255, 0.08);
+    position: relative;
+    z-index: 10;
 }
 
 .terminal-top {
@@ -470,7 +465,11 @@ section {
     .terminal {
         width: 100%;
     }
-
+.profile-photo {
+    width: 220px;
+    height: 220px;
+    align-self: center;
+}
     .about-content {
         flex-direction: column;
     }
@@ -614,4 +613,69 @@ section {
     color: #777;
     font-size: 13px;
     letter-spacing: 0.5px;
+}
+/*  PROJECT STATUS  */
+
+.project-status {
+    display: inline-block;
+    padding: 4px 9px;
+    border: 1px solid #40394d;
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.project-card:hover .project-status {
+    border-color: #b58cff;
+    color: #b58cff;
+}
+/*  PROJECT LINK  */
+
+.project-link {
+    display: inline-block;
+    margin-top: 22px;
+    color: #b58cff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    color: #d0b8ff;
+    transform: translateX(5px);
+}
+/* ===== PROFILE PHOTO ===== */
+
+.profile-photo {
+    position: absolute !important;
+
+    width: 280px !important;
+    height: 600px !important;
+
+    left: 45% !important;
+    bottom: 0 !important;
+
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+
+    z-index: 3 !important;
+}
+
+.profile-photo img {
+    width: 350px !important;
+    height: auto !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    display: block !important;
+    object-fit: contain !important;
+}
+.profile-photo img:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.4));
 }
