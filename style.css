@@ -1,4 +1,4 @@
-```css
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 
 .navbar {
     width: 100%;
@@ -77,7 +77,7 @@ body {
     color: #d8b384;
 }
 
-/* ================= COMMON SECTION ================= */
+/*  COMMON SECTION  */
 
 section {
     padding: 100px 8%;
@@ -100,7 +100,7 @@ section {
     font-weight: 600;
 }
 
-/* ================= HERO ================= */
+/*  HERO  */
 
 .hero {
     position: relative;
@@ -180,7 +180,7 @@ section {
     color: #17120f;
 }
 
-/* ================= TERMINAL ================= */
+/*  TERMINAL */
 
 .terminal {
     position: relative;
@@ -227,7 +227,7 @@ section {
     color: #d8b384;
 }
 
-/* ================= ABOUT ================= */
+/* ABOUT */
 
 .about {
     background-color: #17120f;
@@ -302,7 +302,7 @@ section {
     line-height: 1.5;
 }
 
-/* ================= EDUCATION ================= */
+/*  EDUCATION  */
 
 .education {
     background-color: #1c1511;
@@ -361,7 +361,7 @@ section {
     margin-bottom: 5px;
 }
 
-/* ================= SKILLS ================= */
+/*  SKILLS  */
 
 .skills {
     background-color: #17120f;
@@ -428,7 +428,7 @@ section {
     color: #d8b384;
 }
 
-/* ================= PROJECTS ================= */
+/*  PROJECTS  */
 
 .projects {
     background-color: #1c1511;
@@ -514,7 +514,7 @@ section {
     transform: translateX(5px);
 }
 
-/* ================= CONTACT ================= */
+/*  CONTACT  */
 
 .contact {
     background-color: #17120f;
@@ -557,7 +557,7 @@ section {
     text-decoration: underline;
 }
 
-/* ================= PROFILE PHOTO ================= */
+/*  PROFILE PHOTO  */
 
 .profile-photo {
     position: absolute !important;
@@ -593,7 +593,7 @@ section {
     filter: drop-shadow(0 0 18px rgba(216, 179, 132, 0.4));
 }
 
-/* ================= CODING LAB ================= */
+/* CODING LAB  */
 
 .coding-lab {
     padding: 90px 8%;
@@ -688,7 +688,7 @@ section {
     color: #ddd5cc;
 }
 
-/* ================= FOOTER ================= */
+/*  FOOTER  */
 
 .footer {
     padding: 25px 8%;
@@ -703,7 +703,7 @@ section {
     letter-spacing: 0.5px;
 }
 
-/* ================= MOBILE ================= */
+/*  MOBILE  */
 
 @media (max-width: 768px) {
 
@@ -772,46 +772,6 @@ section {
     }
 
 }
-```
-/* ================================= */
-/*       CHAMPAGNE ORBIT SYSTEM      */
-/* ================================= */
-
-.orbit-system {
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: 45%;
-    bottom: -20px;
-
-    transform: translateX(-50%);
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-
-/* ============================= */
-/*          ORBIT RINGS          */
-/* ============================= */
-
-.orbit-ring {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    border: 1px solid rgba(216, 179, 132, 0.35);
-
-    border-radius: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
 /* First orbit */
 
 .orbit-ring-1 {
@@ -847,10 +807,7 @@ section {
         rotate(65deg);
 }
 
-
-/* ============================= */
 /*            GLOW               */
-/* ============================= */
 
 .orbit-system::after {
     content: "";
@@ -873,9 +830,9 @@ section {
 
     z-index: -1;
 }
-/* =========================================
-   SMALL + LOWER ORBIT
-   ========================================= */
+
+  /* SMALL + LOWER ORBIT*/
+   
 
 .orbit-system {
     position: absolute !important;
@@ -894,7 +851,7 @@ section {
 }
 
 
-/* ================= ORBIT RINGS ================= */
+/*  ORBIT RINGS  */
 
 .orbit-ring {
     position: absolute !important;
@@ -933,14 +890,7 @@ section {
         translate(-50%, -50%)
         rotate(65deg) !important;
 }
-
-
-
-
-    /* =========================================
-        FIXED PLANET ORBITS
-   ========================================= */
-
+    /* FIXED PLANET ORBITS */
 
 /* HTML — inner circular orbit */
 
@@ -1088,13 +1038,8 @@ section {
     }
 }
 
-
-
 /* HTML */
-
-
-
-/* ================= PHOTO IN FRONT ================= */
+/* PHOTO IN FRONT  */
 
 .profile-photo {
     z-index: 10 !important;
