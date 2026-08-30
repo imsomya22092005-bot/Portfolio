@@ -100,42 +100,42 @@ section {
     font-weight: 600;
 }
 
-/*  HERO  */
+/*  INTRO  */
 
-.hero {
+.intro {
     position: relative;
 }
 
-.hero-content {
+.intro-content {
     position: relative;
     z-index: 5;
 }
 
-.hero-tag {
+.intro-tag {
     color: #d8b384;
     letter-spacing: 3px;
     font-size: 13px;
     margin-bottom: 15px;
 }
 
-.hero h1 {
+.intro h1 {
     font-size: 75px;
     line-height: 0.95;
     margin-bottom: 25px;
 }
 
-.hero h1 span {
+.intro h1 span {
     color: #d8b384;
 }
 
-.hero-description {
+.intro-description {
     color: #aaa39c;
     font-size: 18px;
     max-width: 520px;
     margin-bottom: 30px;
 }
 
-.hero-buttons {
+.intro-buttons {
     display: flex;
     gap: 15px;
 }
@@ -428,23 +428,8 @@ section {
     color: #d8b384;
 }
 
-/*  PROJECTS  */
-
 .projects {
     background-color: #1c1511;
-}
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.project-card {
-    padding: 35px;
-    background-color: #211914;
-    border: 1px solid #3b2d24;
-    transition: 0.3s;
 }
 
 .project-card:hover {
@@ -469,9 +454,26 @@ section {
 }
 
 .project-tech {
-    display: flex;
+    display: flex;/*  PROJECTS  */
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.projects {
+    background-color: #1c1511;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 35px;
+    background-color: #211914;
+    border: 1px solid #3b2d24;
+    transition: 0.3s;
 }
 
 .project-tech span {
@@ -770,42 +772,8 @@ section {
     .section-title h2 {
         font-size: 30px;
     }
-
-}
-/* First orbit */
-
-.orbit-ring-1 {
-    width: 560px;
-    height: 230px;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(20deg);
 }
 
-
-/* Second orbit */
-
-.orbit-ring-2 {
-    width: 620px;
-    height: 270px;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(-25deg);
-}
-
-
-/* Third orbit */
-
-.orbit-ring-3 {
-    width: 500px;
-    height: 200px;
-
-    transform:
-        translate(-50%, -50%)
-        rotate(65deg);
-}
 
 /*            GLOW               */
 
@@ -836,21 +804,25 @@ section {
 
 .orbit-system {
     position: absolute !important;
-
     width: 500px !important;
     height: 500px !important;
 
-    left: 45% !important;
-    top: 430px !important;
+    left: 68% !important;
+    top: 50% !important;
 
-    bottom: auto !important;
-
-    transform: translateX(-50%) !important;
+    transform: translate(-50%, -50%) !important;
 
     z-index: 1 !important;
 }
 
+.orbit-item {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
 
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
 /*  ORBIT RINGS  */
 
 .orbit-ring {
@@ -904,14 +876,14 @@ section {
         transform:
             translate(-50%, -50%)
             rotate(0deg)
-            translateX(155px);
+            translateX(200px);
     }
 
     to {
         transform:
             translate(-50%, -50%)
             rotate(360deg)
-            translateX(155px);
+            translateX(200px);
     }
 }
 
@@ -928,31 +900,31 @@ section {
     0% {
         transform:
             translate(-50%, -50%)
-            translate(0, -105px);
+            translate(0, -190px);
     }
 
     25% {
         transform:
             translate(-50%, -50%)
-            translate(145px, 0);
+            translate(190px, 0);
     }
 
     50% {
         transform:
             translate(-50%, -50%)
-            translate(0, 105px);
+            translate(0, -190px);
     }
 
     75% {
         transform:
             translate(-50%, -50%)
-            translate(-145px, 0);
+            translate(190px, 0);
     }
 
     100% {
         transform:
             translate(-50%, -50%)
-            translate(0, -105px);
+            translate(0, -190px);
     }
 }
 
@@ -969,31 +941,31 @@ section {
     0% {
         transform:
             translate(-50%, -50%)
-            translate(0, -120px);
+            translate(0, 210px);
     }
 
     25% {
         transform:
             translate(-50%, -50%)
-            translate(160px, 0);
+            translate(210px, 0);
     }
 
     50% {
         transform:
             translate(-50%, -50%)
-            translate(0, 120px);
+            translate(0, 210px);
     }
 
     75% {
         transform:
             translate(-50%, -50%)
-            translate(-160px, 0);
+            translate(-210px, 0);
     }
 
     100% {
         transform:
             translate(-50%, -50%)
-            translate(0, -120px);
+            translate(0, -210px);
     }
 }
 
@@ -1010,31 +982,31 @@ section {
     0% {
         transform:
             translate(-50%, -50%)
-            translate(0, 90px);
+            translate(0, 170px);
     }
 
     25% {
         transform:
             translate(-50%, -50%)
-            translate(-125px, 0);
+            translate(170px, 0);
     }
 
     50% {
         transform:
             translate(-50%, -50%)
-            translate(0, -90px);
+            translate(0, 170px);
     }
 
     75% {
         transform:
             translate(-50%, -50%)
-            translate(125px, 0);
+            translate(170px, 0);
     }
 
     100% {
         transform:
             translate(-50%, -50%)
-            translate(0, 90px);
+            translate(0, 170px);
     }
 }
 
