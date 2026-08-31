@@ -360,6 +360,61 @@ section {
     color: #d8b384;
     margin-bottom: 5px;
 }
+/*  GOAL  */
+
+.goal {
+    background-color: #17120f;
+}
+
+.goal-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.goal-text {
+    max-width: 650px;
+}
+
+.goal-text p {
+    color: #aaa39c;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.goal-box {
+    width: 350px;
+    padding: 30px;
+    background-color: #211914;
+    border: 1px solid #3b2d24;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.goal-box:hover {
+    border-color: #d8b384;
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(216, 179, 132, 0.08);
+}
+
+.goal-box span {
+    color: #d8b384;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.goal-box h3 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.goal-box p {
+    color: #8f8780;
+    line-height: 1.6;
+}
 
 /*  SKILLS  */
 
@@ -593,101 +648,6 @@ section {
 .profile-photo img:hover {
     transform: translateY(-5px);
     filter: drop-shadow(0 0 18px rgba(216, 179, 132, 0.4));
-}
-
-/* CODING LAB  */
-
-.coding-lab {
-    padding: 90px 8%;
-    background-color: #17120f;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.section-title p {
-    color: #aaa39c;
-    font-size: 16px;
-}
-
-.coding-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.coding-card {
-    position: relative;
-    padding: 30px;
-    border: 1px solid rgba(216, 179, 132, 0.25);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.03);
-    transition: 0.3s ease;
-    overflow: hidden;
-}
-
-.coding-card:hover {
-    transform: translateY(-8px);
-    border-color: #d8b384;
-    box-shadow: 0 15px 35px rgba(216, 179, 132, 0.15);
-}
-
-.problem-number {
-    display: inline-block;
-    font-size: 13px;
-    color: #d8b384;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-.coding-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.problem {
-    color: #bbb3ab;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.solution {
-    border-left: 2px solid #d8b384;
-    padding-left: 15px;
-    margin-bottom: 25px;
-}
-
-.solution h4 {
-    margin-bottom: 7px;
-    font-size: 15px;
-    color: #d8b384;
-}
-
-.solution p {
-    color: #aaa39c;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.coding-info {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #8f8780;
-    font-size: 13px;
-}
-
-.coding-info b {
-    color: #ddd5cc;
 }
 
 /*  FOOTER  */
