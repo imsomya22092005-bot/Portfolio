@@ -226,7 +226,449 @@ section {
 .status {
     color: #d8b384;
 }
+/* PROFILE PHOTO */
 
+.hero-image {
+    position: absolute;
+
+    left: 420px;
+    top: 410px;
+
+    width: 300px;
+    height: 500px;
+
+    z-index: 2;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: bottom center;
+
+    display: block;
+
+    position: relative;
+    z-index: 3;
+}
+.profile-photo:hover {
+    filter:
+        drop-shadow(0 0 12px rgba(216, 179, 132, 0.5))
+        drop-shadow(0 0 30px rgba(216, 179, 132, 0.25));
+}
+/* =========================================
+   CLEAN 4-ORBIT SYSTEM
+========================================= */
+
+.hero-image {
+    position: absolute;
+    overflow: visible;
+}
+
+
+/* =========================================
+   ORBIT RINGS
+========================================= */
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 60%;
+
+    border: 1px solid rgba(218, 179, 128, 0.45);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    transform-origin: center;
+}
+
+
+/* Orbit 1 */
+
+.orbit-1 {
+    width: 450px;
+    height: 180px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-18deg);
+}
+
+
+/* Orbit 2 */
+
+.orbit-2 {
+    width: 460px;
+    height: 175px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(18deg);
+}
+
+
+/* Orbit 3 */
+
+.orbit-3 {
+    width: 450px;
+    height: 170px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(55deg);
+}
+
+
+/* Orbit 4 */
+
+.orbit-4 {
+    width: 450px;
+    height: 170px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-55deg);
+}
+
+
+/* =========================================
+   PLANETS
+========================================= */
+
+/* =========================================
+   PLANETS
+========================================= */
+
+.orbit-dot {
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #17120f;
+    border: 1px solid rgba(218, 179, 128, 0.7);
+
+    font-size: 7px;
+    font-weight: bold;
+
+    z-index: 4;
+
+    /* Soft glow */
+    box-shadow:
+        0 0 7px rgba(216, 179, 132, 0.35),
+        0 0 15px rgba(216, 179, 132, 0.12);
+
+    /* Smooth hover */
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER EXPANSION
+========================================= */
+
+.orbit-dot:hover {
+    width: 42px;
+    height: 42px;
+
+    border-color: #d8b384;
+
+    box-shadow:
+        0 0 12px rgba(216, 179, 132, 0.7),
+        0 0 25px rgba(216, 179, 132, 0.35),
+        0 0 40px rgba(216, 179, 132, 0.15);
+
+    z-index: 20;
+}
+/* =========================================
+   TINY TRAILING PARTICLES
+========================================= */
+
+.orbit-dot::before,
+.orbit-dot::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #d8b384;
+
+    pointer-events: none;
+}
+
+
+/* First tiny particle */
+
+.orbit-dot::before {
+    width: 4px;
+    height: 4px;
+
+    opacity: 0.7;
+
+    animation: particle-one 1.8s ease-in-out infinite;
+}
+
+
+/* Second tiny particle */
+
+.orbit-dot::after {
+    width: 3px;
+    height: 3px;
+
+    opacity: 0.45;
+
+    animation: particle-two 2.3s ease-in-out infinite;
+}
+/* =========================================
+   PARTICLE MOVEMENT
+========================================= */
+
+@keyframes particle-one {
+
+    0% {
+        transform: translate(-10px, 5px);
+        opacity: 0.2;
+    }
+
+    50% {
+        transform: translate(-20px, -4px);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-10px, 5px);
+        opacity: 0.2;
+    }
+
+}
+
+
+@keyframes particle-two {
+
+    0% {
+        transform: translate(8px, -5px);
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: translate(18px, 7px);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translate(8px, -5px);
+        opacity: 0.15;
+    }
+
+}
+
+/* =========================================
+   PLANET 1 — HTML
+========================================= */
+
+.orbit-1 .orbit-dot {
+    color: #e50fed;
+
+    animation: move-orbit-1 8s linear infinite;
+}
+
+
+/* =========================================
+   PLANET 2 — CSS
+========================================= */
+
+.orbit-2 .orbit-dot {
+    color: #92d421;
+
+    animation: move-orbit-2 10s linear infinite;
+}
+
+
+/* =========================================
+   PLANET 3 — GIT
+========================================= */
+
+.orbit-3 .orbit-dot {
+    color: #1fd3e7;
+
+    animation: move-orbit-3 12s linear infinite;
+}
+
+
+/* =========================================
+   PLANET 4 — GITHUB
+========================================= */
+
+.orbit-4 .orbit-dot {
+    color: #ea13b0;
+
+    animation: move-orbit-4 14s linear infinite;
+}
+
+
+/* =========================================
+   PLANET MOVEMENT
+========================================= */
+
+/* HTML */
+
+@keyframes move-orbit-1 {
+
+    0% {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    75% {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* CSS */
+
+@keyframes move-orbit-2 {
+
+    0% {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    75% {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* GIT */
+
+@keyframes move-orbit-3 {
+
+    0% {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    75% {
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+/* GITHUB */
+
+@keyframes move-orbit-4 {
+
+    0% {
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+    }
+
+    50% {
+        left: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    75% {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    100% {
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 /* ABOUT */
 
 .about {
@@ -615,19 +1057,102 @@ section {
 }
 
 
-/*  FOOTER  */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
-    padding: 25px 8%;
-    text-align: center;
+    padding: 60px 8% 25px;
     background-color: #17120f;
     border-top: 1px solid #332820;
 }
 
-.footer p {
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 45px;
+}
+
+
+/* BRAND */
+
+.footer-brand h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.footer-brand h3 span {
+    color: #d8b384;
+}
+
+.footer-brand p {
+    color: #8f8780;
+    font-size: 14px;
+}
+
+
+/* HEADINGS */
+
+.footer-links h4,
+.footer-connect h4 {
+    color: #d8b384;
+    font-size: 14px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+
+/* LINKS */
+
+.footer-links,
+.footer-connect {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.footer-links a,
+.footer-connect a {
+    color: #8f8780;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-connect a:hover {
+    color: #d8b384;
+    transform: translateX(4px);
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid #332820;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
     color: #77706a;
+    font-size: 12px;
+}
+
+.back-top {
+    color: #d8b384;
+    text-decoration: none;
     font-size: 13px;
-    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.back-top:hover {
+    transform: translateY(-3px);
 }
 
 /*  MOBILE  */
@@ -682,9 +1207,987 @@ section {
     .section-title h2 {
         font-size: 30px;
     }
+    .footer-content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+
+.footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
 }
 
 .terminal {
     position: relative;
-    z-index: 2 !important;
+    z-index: 10 !important;
+}
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: #d8b384;
+
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: sticky;
+        top: 0;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 15px 0;
+
+        background-color: #17120f;
+
+        border-bottom: 1px solid #332820;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 12px;
+    }
+
+}
+/* =========================================================
+   ANIMATED LAPTOP - RIGHT SIDE OF INTRO
+   ========================================================= */
+
+.intro {
+    position: relative;
+}
+
+
+/* =========================
+   MAIN LAPTOP CONTAINER
+   ========================= */
+
+.animated-computer {
+    position: absolute;
+
+    right: 0%;
+    top: 10%;
+
+    width: 390px;
+    height: 390px;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* =========================
+   LAPTOP / COMPUTER
+   ========================= */
+
+.computer {
+    position: absolute;
+
+    width: 270px;
+
+    left: 60px;
+    top: 70px;
+
+    animation: computerFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================
+   LAPTOP SCREEN
+   ========================= */
+
+.screen {
+    position: relative;
+
+    width: 270px;
+    height: 185px;
+
+    /* Darker than your main background */
+    background: rgba(12, 15, 17, 0.94);
+
+    /* MUTED TEAL BORDER */
+    border: 1px solid rgba(143, 185, 181, 0.45);
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 0 25px rgba(143, 185, 181, 0.08),
+        inset 0 0 25px rgba(143, 185, 181, 0.03);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TOP OF SCREEN
+   ========================= */
+
+.screen-top {
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding-left: 11px;
+
+    border-bottom: 1px solid rgba(143, 185, 181, 0.15);
+
+    background: rgba(143, 185, 181, 0.04);
+}
+
+
+.screen-top span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #66716f;
+}
+
+
+/* =========================
+   CODE INSIDE LAPTOP
+   ========================= */
+
+.code-content {
+    padding: 18px 20px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #cbd2d1;
+}
+
+
+.code-content p {
+    margin: 0;
+}
+
+
+/* TEAL CODE HIGHLIGHTS */
+
+.code-content span {
+    color: #8FB9B5;
+}
+
+
+.code-content .indent {
+    padding-left: 18px;
+}
+
+
+.code-content .indent-2 {
+    padding-left: 36px;
+
+    color: #7d8785;
+}
+
+
+/* =========================
+   BLINKING CURSOR
+   ========================= */
+
+.code-cursor {
+    position: absolute;
+
+    width: 6px;
+    height: 14px;
+
+    left: 125px;
+    bottom: 31px;
+
+    background: #8FB9B5;
+
+    box-shadow:
+        0 0 8px rgba(143, 185, 181, 0.5);
+
+    animation: cursorBlink 1s steps(2) infinite;
+}
+
+
+/* =========================
+   LAPTOP STAND
+   ========================= */
+
+.computer-stand {
+    position: absolute;
+
+    width: 45px;
+    height: 40px;
+
+    left: 112px;
+    top: 185px;
+
+    border-left: 1px solid rgba(143, 185, 181, 0.40);
+    border-right: 1px solid rgba(143, 185, 181, 0.40);
+
+    transform: skew(-8deg);
+}
+
+
+/* =========================
+   LAPTOP BASE
+   ========================= */
+
+.computer-base {
+    position: absolute;
+
+    width: 100px;
+    height: 8px;
+
+    left: 85px;
+    top: 220px;
+
+    border: 1px solid rgba(143, 185, 181, 0.40);
+
+    border-radius: 50%;
+
+    background: rgba(143, 185, 181, 0.04);
+
+    box-shadow:
+        0 0 12px rgba(143, 185, 181, 0.08);
+}
+
+
+/* =========================================================
+   ANIMATED TECH LINES
+   ========================================================= */
+
+.tech-line {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    /* VERY SUBTLE TEAL */
+    border: 1px solid rgba(143, 185, 181, 0.20);
+
+    border-radius: 50%;
+}
+
+
+/* Horizontal ellipse */
+
+.line-1 {
+    width: 390px;
+    height: 150px;
+
+    animation:
+        rotateLine1 9s linear infinite;
+}
+
+
+/* Vertical ellipse */
+
+.line-2 {
+    width: 180px;
+    height: 390px;
+
+    animation:
+        rotateLine2 11s linear infinite;
+}
+
+
+/* Diagonal ellipse */
+
+.line-3 {
+    width: 330px;
+    height: 250px;
+
+    animation:
+        rotateLine3 13s linear infinite;
+}
+
+
+/* =========================================================
+   FLOATING CODE SYMBOLS
+   ========================================================= */
+
+.code-symbol {
+    position: absolute;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #8FB9B5;
+
+    text-shadow:
+        0 0 8px rgba(143, 185, 181, 0.45);
+
+    animation:
+        symbolFloat 4s ease-in-out infinite;
+}
+
+
+/* SYMBOL 1 */
+
+.symbol-1 {
+    top: 55px;
+    left: 35px;
+
+    animation-delay: 0s;
+}
+
+
+/* SYMBOL 2 */
+
+.symbol-2 {
+    top: 285px;
+    left: 60px;
+
+    animation-delay: 1s;
+}
+
+
+/* SYMBOL 3 */
+
+.symbol-3 {
+    top: 35px;
+    right: 35px;
+
+    animation-delay: 2s;
+}
+
+
+/* SYMBOL 4 */
+
+.symbol-4 {
+    bottom: 45px;
+    right: 25px;
+
+    font-size: 11px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================================
+   ANIMATION - LAPTOP FLOAT
+   ========================================================= */
+
+@keyframes computerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION - CURSOR
+   ========================================================= */
+
+@keyframes cursorBlink {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ANIMATION - SYMBOLS
+   ========================================================= */
+
+@keyframes symbolFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: translateY(-12px);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ANIMATION - LINE 1
+   ========================================================= */
+
+@keyframes rotateLine1 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION - LINE 2
+   ========================================================= */
+
+@keyframes rotateLine2 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION - LINE 3
+   ========================================================= */
+
+@keyframes rotateLine3 {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .animated-computer {
+        right: -30px;
+
+        transform: scale(0.75);
+
+        transform-origin: center;
+
+        opacity: 0.5;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .animated-computer {
+        display: none;
+    }
+}
+/* =====================================================
+   GLOWING EARTH
+   ===================================================== */
+
+.intro {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* EARTH IMAGE */
+
+.earth-background {
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    left: 2%;
+    top: -100px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    opacity: 0.65;
+
+    mix-blend-mode: screen;
+}
+
+
+.earth-background img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   CONTENT ABOVE EARTH
+   ===================================================== */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* LAPTOP ABOVE EARTH */
+
+.animated-computer {
+    z-index: 5;
+}
+
+
+/* TERMINAL ABOVE EARTH */
+
+.terminal {
+    position: relative;
+    z-index: 5;
+}
+/* ================================
+   EARTH - SMALLER
+================================ */
+
+.earth-background {
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    left: 3%;
+    top: -40px;
+
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.55;
+    mix-blend-mode: screen;
+}
+
+.earth-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ================================
+   INTRO CONTENT ABOVE EARTH
+================================ */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* ================================
+   COMPUTER - KEEP ON RIGHT
+================================ */
+
+.animated-computer {
+    position: absolute;
+
+    z-index: 6;
+
+    /* adjust these if needed */
+    right: 4%;
+    top: 70px;
+}
+
+
+/* ================================
+   YOUR PHOTO / ORBIT BELOW COMPUTER
+================================ */
+
+.profile-section,
+.profile-container,
+.orbit-container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ================================
+   TERMINAL SHOULD NOT COVER PHOTO
+================================ */
+
+.terminal {
+    position: relative;
+    z-index: 3;
+}
+/* =================================
+   TERMINAL BEHIND PROFILE PHOTO
+================================= */
+
+.terminal {
+    position: relative;
+    z-index: 1 !important;
+}
+
+img[src="profile.png"] {
+    position: relative;
+    z-index: 20 !important;
+}/* =========================================
+   GOAL SECTION ANIMATION
+========================================= */
+
+.goal {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Animation container */
+
+.goal-animation {
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    right: 8%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    opacity: 0.7;
+
+    z-index: 0;
+}
+
+
+/* =========================================
+   GLOWING RINGS
+========================================= */
+
+.goal-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border: 1px solid rgba(143, 185, 181, 0.25);
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.ring-1 {
+    width: 150px;
+    height: 150px;
+
+    animation: goalPulse 4s ease-in-out infinite;
+}
+
+
+.ring-2 {
+    width: 230px;
+    height: 230px;
+
+    border-style: dashed;
+
+    animation: goalRotate 12s linear infinite;
+}
+
+
+.ring-3 {
+    width: 320px;
+    height: 320px;
+
+    border-color: rgba(143, 185, 181, 0.12);
+
+    animation: goalRotateReverse 18s linear infinite;
+}
+
+
+/* =========================================
+   CENTER TARGET
+========================================= */
+
+.goal-target {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 65px;
+    height: 65px;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(143, 185, 181, 0.5);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(143, 185, 181, 0.05);
+
+    box-shadow:
+        0 0 20px rgba(143, 185, 181, 0.12);
+
+    animation: targetGlow 3s ease-in-out infinite;
+}
+
+
+.goal-target span {
+    color: #8FB9B5;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 0 10px rgba(143, 185, 181, 0.7);
+}
+
+
+/* =========================================
+   FLOATING DOTS
+========================================= */
+
+.goal-dot {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #8FB9B5;
+
+    box-shadow:
+        0 0 10px rgba(143, 185, 181, 0.7);
+
+    animation: goalDotFloat 4s ease-in-out infinite;
+}
+
+
+.dot-1 {
+    left: 15%;
+    top: 25%;
+}
+
+
+.dot-2 {
+    right: 15%;
+    top: 30%;
+
+    animation-delay: 1s;
+}
+
+
+.dot-3 {
+    left: 25%;
+    bottom: 20%;
+
+    animation-delay: 2s;
+}
+
+
+.dot-4 {
+    right: 22%;
+    bottom: 18%;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes goalPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+@keyframes goalRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes goalRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes targetGlow {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+            0 0 15px rgba(143, 185, 181, 0.08);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.12);
+        box-shadow:
+            0 0 30px rgba(143, 185, 181, 0.25);
+    }
+}
+
+
+@keyframes goalDotFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   KEEP GOAL TEXT ABOVE ANIMATION
+========================================= */
+
+.goal-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .goal-animation {
+        width: 300px;
+        height: 300px;
+
+        right: -80px;
+
+        opacity: 0.25;
+    }
 }
