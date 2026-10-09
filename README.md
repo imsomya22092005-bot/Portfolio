@@ -6,6 +6,8 @@ A personal portfolio website showcasing my skills, projects, education, goals, a
 
 - HTML
 - CSS
+- Javascript
+- React.js
 
 ## Features
 
