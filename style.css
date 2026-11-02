@@ -4073,3 +4073,16 @@ flex-direction: column;
         min-height: 0;
     }
 }
+
+/* ================= CENTERED DESKTOP NAVBAR ================= */
+@media (min-width: 801px) {
+    .navbar {
+        justify-content: center;
+        gap: 42px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        align-items: center;
+    }
+}
