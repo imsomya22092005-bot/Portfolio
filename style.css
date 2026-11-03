@@ -4568,3 +4568,10 @@ flex-direction: column;
 @media (max-width: 480px) {
     .contact-wire-path { stroke-width: 5; }
 }
+
+
+/* CONTACT WIRE — USE THE SITE'S EXACT GOLD, WITH ONLY A SUBTLE HALO */
+.contact-wire-path {
+    stroke: #d8b384;
+    filter: drop-shadow(0 0 7px rgba(216, 179, 132, .28));
+}
