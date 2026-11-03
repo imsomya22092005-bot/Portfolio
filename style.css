@@ -4086,3 +4086,220 @@ flex-direction: column;
         align-items: center;
     }
 }
+
+
+/* =========================================================
+   INTERACTIVE STACKED SKILLS DECK
+   ========================================================= */
+.skills {
+    overflow: hidden;
+}
+
+.skills-deck-wrap {
+    width: min(100%, 900px);
+    margin: 12px auto 0;
+    padding: 8px 0 0;
+}
+
+.skills-container {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    display: block;
+    perspective: 1400px;
+    isolation: isolate;
+}
+
+.skills-container::before {
+    content: "";
+    position: absolute;
+    width: min(72%, 560px);
+    height: 230px;
+    left: 50%;
+    top: 85px;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse, rgba(216, 179, 132, 0.13), transparent 70%);
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+.skills-container .skill {
+    position: absolute;
+    left: 50%;
+    top: 28px;
+    width: min(76%, 650px);
+    min-height: 205px;
+    box-sizing: border-box;
+    padding: 34px 38px;
+    border: 1px solid rgba(216, 179, 132, 0.34);
+    border-radius: 5px;
+    background: linear-gradient(130deg, #2a2019 0%, #211914 58%, #19130f 100%);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255,255,255,0.035);
+    transform-origin: 50% 90%;
+    transition: transform 650ms cubic-bezier(.2,.75,.2,1), opacity 500ms ease, filter 500ms ease, box-shadow 500ms ease;
+    cursor: pointer;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.skills-container .skill::before {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -75px;
+    bottom: -125px;
+    border: 1px solid rgba(216, 179, 132, 0.18);
+    border-radius: 50%;
+    box-shadow: 0 0 0 22px rgba(216, 179, 132, 0.025), 0 0 0 44px rgba(216, 179, 132, 0.02);
+    pointer-events: none;
+}
+
+.skills-container .skill::after {
+    content: "↗";
+    position: absolute;
+    right: 34px;
+    top: 31px;
+    color: #d8b384;
+    font-size: 23px;
+    opacity: 0.8;
+    transform: none;
+    transition: transform 300ms ease, opacity 300ms ease;
+}
+
+.skills-container .skill span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(216, 179, 132, 0.5);
+    border-radius: 50%;
+    color: #e4c49b;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.skills-container .skill h3 {
+    position: relative;
+    z-index: 1;
+    margin: 22px 0 8px;
+    color: #f0d9b5;
+    font-family: inherit;
+    font-size: clamp(25px, 3.2vw, 36px);
+    letter-spacing: -0.8px;
+}
+
+.skills-container .skill p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #b9a99a;
+    font-size: 15px;
+}
+
+.skills-container .skill:hover {
+    border-color: rgba(216, 179, 132, 0.65);
+}
+
+.skills-container .skill:hover::after {
+    opacity: 1;
+    transform: translate(3px, -3px);
+}
+
+.skills-container .skill:nth-child(1) {
+    z-index: 5;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(-1deg) scale(1);
+}
+.skills-container .skill:nth-child(2) {
+    z-index: 4;
+    opacity: .88;
+    transform: translateX(-49%) translateY(43px) rotate(2.2deg) scale(.965);
+    filter: brightness(.83);
+}
+.skills-container .skill:nth-child(3) {
+    z-index: 3;
+    opacity: .72;
+    transform: translateX(-51%) translateY(79px) rotate(-2.7deg) scale(.93);
+    filter: brightness(.7);
+}
+.skills-container .skill:nth-child(4) {
+    z-index: 2;
+    opacity: .52;
+    transform: translateX(-49%) translateY(108px) rotate(3.3deg) scale(.895);
+    filter: brightness(.58);
+}
+.skills-container .skill:nth-child(5) {
+    z-index: 1;
+    opacity: .32;
+    transform: translateX(-51%) translateY(132px) rotate(-3.8deg) scale(.86);
+    filter: brightness(.48);
+}
+
+.skills-deck-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin: 5px auto 0;
+    color: #8f8780;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.skills-deck-controls strong {
+    color: #e2bd8d;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.skills-deck-controls button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #5a4535;
+    border-radius: 50%;
+    background: transparent;
+    color: #e2bd8d;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 250ms ease, color 250ms ease, transform 250ms ease;
+}
+
+.skills-deck-controls button:hover {
+    background: #d8b384;
+    color: #17120f;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+    .skills-container { height: 355px; }
+    .skills-container .skill { width: 86%; min-height: 190px; padding: 29px 30px; }
+    .skills-container .skill:nth-child(2) { transform: translateX(-49%) translateY(38px) rotate(2deg) scale(.96); }
+    .skills-container .skill:nth-child(3) { transform: translateX(-51%) translateY(70px) rotate(-2.5deg) scale(.92); }
+    .skills-container .skill:nth-child(4) { transform: translateX(-49%) translateY(98px) rotate(3deg) scale(.88); }
+    .skills-container .skill:nth-child(5) { transform: translateX(-51%) translateY(120px) rotate(-3.5deg) scale(.84); }
+}
+
+@media (max-width: 480px) {
+    .skills-deck-wrap { margin-top: 0; }
+    .skills-container { height: 315px; }
+    .skills-container .skill { top: 20px; width: 91%; min-height: 178px; padding: 25px 22px; }
+    .skills-container .skill span { width: 36px; height: 36px; }
+    .skills-container .skill h3 { margin-top: 20px; font-size: 25px; }
+    .skills-container .skill p { max-width: 85%; font-size: 13px; }
+    .skills-container .skill::after { right: 22px; top: 25px; }
+    .skills-container .skill:nth-child(2) { transform: translateX(-49%) translateY(34px) rotate(2deg) scale(.95); }
+    .skills-container .skill:nth-child(3) { transform: translateX(-51%) translateY(63px) rotate(-2.5deg) scale(.9); }
+    .skills-container .skill:nth-child(4) { transform: translateX(-49%) translateY(89px) rotate(3deg) scale(.85); }
+    .skills-container .skill:nth-child(5) { transform: translateX(-51%) translateY(111px) rotate(-3.5deg) scale(.8); }
+    .skills-deck-controls { margin-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-container .skill, .skills-deck-controls button { transition: none; }
+}
