@@ -4575,3 +4575,17 @@ flex-direction: column;
     stroke: #d8b384;
     filter: drop-shadow(0 0 7px rgba(216, 179, 132, .28));
 }
+
+
+/* READABILITY BOOST — ABOUT, PROFILE TERMINAL & GOAL */
+.about-text p, .goal-text p { font-size: 19px; line-height: 1.85; }
+.terminal-content { font-size: 16px; line-height: 1.7; }
+.terminal-content p { margin-bottom: 10px; }
+.terminal-output, .terminal-content .status { font-size: 16px; }
+.terminal-lines p { font-size: 14px; }
+@media (max-width: 600px) {
+  .about-text p, .goal-text p { font-size: 17px; line-height: 1.75; }
+  .terminal-content { font-size: 15px; }
+  .terminal-output, .terminal-content .status { font-size: 15px; }
+  .terminal-lines p { font-size: 13px; }
+}
