@@ -4532,3 +4532,22 @@ flex-direction: column;
     .contact-wire-stage { margin-top: -42px; height: 105vh; min-height: 620px; }
     .contact-wire-path { stroke-width: 5; }
 }
+
+
+/* CONTACT HEADING SIZE — OVERRIDE THE GENERAL SECTION HEADING RULE */
+.contact .section-heading.contact-invitation h2 {
+    width: min(100%, 1350px);
+    font-size: clamp(64px, 9.5vw, 150px);
+    line-height: .94;
+    letter-spacing: -.065em;
+}
+@media (max-width: 800px) {
+    .contact .section-heading.contact-invitation h2 {
+        font-size: clamp(52px, 11vw, 92px);
+    }
+}
+@media (max-width: 480px) {
+    .contact .section-heading.contact-invitation h2 {
+        font-size: clamp(44px, 12.5vw, 68px);
+    }
+}
