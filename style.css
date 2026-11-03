@@ -4337,3 +4337,75 @@ flex-direction: column;
         font-size: clamp(29px, 7vw, 36px);
     }
 }
+
+
+/* ================= CONTACT SECTION — CENTERED LAYOUT ================= */
+.contact {
+    text-align: center;
+}
+
+.contact .section-heading {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact .section-heading .section-number {
+    font-size: 15px;
+    letter-spacing: 2.4px;
+}
+
+.contact .section-heading h2 {
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1.15;
+}
+
+.contact .contact-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.contact .contact-text {
+    width: min(100%, 620px);
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact .contact-text p {
+    text-align: center;
+}
+
+.contact .contact-terminal {
+    width: min(100%, 360px);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.contact .contact-status {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .contact .section-heading .section-number {
+        font-size: 13px;
+    }
+
+    .contact .section-heading h2 {
+        font-size: clamp(29px, 7vw, 36px);
+    }
+
+    .contact .contact-content {
+        gap: 24px;
+    }
+}
