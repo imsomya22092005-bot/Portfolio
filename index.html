@@ -726,32 +726,28 @@
 
     <!-- ================= CONTACT ================= -->
 
-    <section class="contact" id="contact">
+<section class="contact" id="contact">
 
-        <div class="section-heading">
+    <div class="section-heading contact-invitation">
+        <p class="section-number">06 — CONTACT</p>
+        <h2>Wanna connect?</h2>
+        <p class="contact-invitation-copy">Let's build something together.</p>
+    </div>
 
-            <p class="section-number">
-                06 — CONTACT
-            </p>
+    <div class="contact-wire-stage" aria-hidden="true">
+        <svg class="contact-wire-svg" viewBox="0 0 1000 1800" preserveAspectRatio="none">
+            <path class="contact-wire-path" d="M500 0
+                C500 110 245 110 245 245
+                C245 365 755 315 755 475
+                C755 620 330 560 330 735
+                C330 900 690 835 690 1010
+                C690 1175 430 1120 430 1280
+                C430 1430 500 1510 500 1800" />
+        </svg>
+    </div>
 
-            <h2>Let's connect.</h2>
-
-        </div>
-
-
-        <div class="contact-content">
-
-            <div class="contact-text">
-
-                <p>
-                    Have an idea, project or opportunity you'd like
-                    to discuss? I would love to hear from you.
-                </p>
-
-            </div>
-
-
-            <div class="contact-terminal">
+    <div class="contact-terminal-wrap">
+        <div class="contact-terminal">
 
     <div class="contact-terminal-top">
         <span></span>
@@ -802,10 +798,11 @@
     </div>
 
 </div>
+    </div>
 
 </section>
 
-    <!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER ================= -->
 
     <footer class="footer">
 
@@ -989,6 +986,31 @@
           updateCount();
         });
         updateCount();
+      })();
+
+      (() => {
+        const stage = document.querySelector(".contact-wire-stage");
+        const path = document.querySelector(".contact-wire-path");
+        if (!stage || !path) return;
+
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = String(length);
+        path.style.strokeDashoffset = String(length);
+
+        let frame = 0;
+        const updateWire = () => {
+          frame = 0;
+          const rect = stage.getBoundingClientRect();
+          const travel = Math.max(1, rect.height + window.innerHeight * 0.35);
+          const progress = Math.min(1, Math.max(0, (window.innerHeight * 0.78 - rect.top) / travel));
+          path.style.strokeDashoffset = String(length * (1 - progress));
+        };
+        const requestUpdate = () => {
+          if (!frame) frame = window.requestAnimationFrame(updateWire);
+        };
+        window.addEventListener("scroll", requestUpdate, { passive: true });
+        window.addEventListener("resize", requestUpdate);
+        updateWire();
       })();
     </script>
 
