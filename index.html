@@ -954,6 +954,44 @@
       })();
     </script>
 
+
+    <!-- SKILLS CARD DECK INTERACTION -->
+    <script>
+      (() => {
+        const deck = document.getElementById("skills-deck");
+        const previous = document.getElementById("skill-prev");
+        const next = document.getElementById("skill-next");
+        const current = document.getElementById("skill-current");
+        if (!deck || !previous || !next || !current) return;
+
+        const cards = () => [...deck.querySelectorAll(".skill")];
+        const updateCount = () => {
+          const number = cards()[0]?.querySelector("span")?.textContent?.trim() || "01";
+          current.textContent = number;
+        };
+        const showNext = () => {
+          const first = cards()[0];
+          if (first) deck.appendChild(first);
+          updateCount();
+        };
+        const showPrevious = () => {
+          const all = cards();
+          if (all.length) deck.insertBefore(all[all.length - 1], all[0]);
+          updateCount();
+        };
+
+        next.addEventListener("click", showNext);
+        previous.addEventListener("click", showPrevious);
+        deck.addEventListener("click", (event) => {
+          const selected = event.target.closest(".skill");
+          if (!selected) return;
+          while (deck.firstElementChild !== selected) deck.appendChild(deck.firstElementChild);
+          updateCount();
+        });
+        updateCount();
+      })();
+    </script>
+
 </body>
 
 </html>
